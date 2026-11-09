@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cldNexus</title>
+  <meta name="description" content="cldNexus: Cyberpunk-Tools, Games und Bots von Nico und Nick.">
+  <link rel="icon" href="assets/avatar.jpg">
+  <style>
+    @font-face { font-family: "Share Tech Mono"; src: url("fonts/ShareTechMono-Regular.ttf") format("truetype"); font-display: swap; }
+    :root { --cyan: #00e5ff; --magenta: #ff2bd6; --red: #ff4d4d; --bg: #05020a; --fg: #bff8ff; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--fg);
+      font-family: "Share Tech Mono", Consolas, "Courier New", monospace; }
+    body { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 48px 20px;
+      background:
+        radial-gradient(ellipse at 20% 10%, rgba(0,229,255,.12), transparent 55%),
+        radial-gradient(ellipse at 80% 90%, rgba(255,77,77,.12), transparent 55%),
+        radial-gradient(ellipse at 50% 50%, rgba(255,43,214,.07), transparent 60%),
+        var(--bg); }
+    main { width: 100%; max-width: 720px; text-align: center; }
+    .logo { width: min(260px, 60vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--cyan);
+      box-shadow: -10px 0 40px rgba(0,229,255,.45), 10px 0 40px rgba(255,77,77,.45), 0 0 60px rgba(255,43,214,.25); }
+    h1 { margin: 28px 0 6px; font-size: clamp(2.4rem, 9vw, 4rem); letter-spacing: .08em; font-weight: normal;
+      color: #fff; text-shadow: -2px 0 var(--cyan), 2px 0 var(--red), 0 0 24px var(--magenta); }
+    .tag { color: var(--cyan); margin: 0 0 32px; letter-spacing: .12em; }
+    .tag b { color: var(--magenta); font-weight: normal; }
+    .card { border: 1px solid rgba(0,229,255,.35); border-radius: 12px; padding: 22px 24px; text-align: left;
+      background: rgba(11,6,18,.75); box-shadow: inset 0 0 30px rgba(255,43,214,.06); }
+    .card p { margin: 0 0 12px; line-height: 1.6; }
+    ul { list-style: none; padding: 0; margin: 0 0 4px; }
+    li { padding: 3px 0; }
+    li::before { content: "> "; color: var(--magenta); }
+    .links { margin-top: 28px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    a.btn { color: var(--bg); background: var(--cyan); text-decoration: none; padding: 10px 18px; border-radius: 6px;
+      letter-spacing: .06em; transition: transform .15s, box-shadow .15s; }
+    a.btn.m { background: var(--magenta); }
+    a.btn.r { background: var(--red); }
+    a.btn:hover { transform: translateY(-2px); box-shadow: 0 0 18px currentColor; }
+    footer { margin-top: 36px; color: #6f8a93; font-size: .85rem; }
+    @media (prefers-reduced-motion: no-preference) {
+      .logo { animation: pulse 4s ease-in-out infinite; }
+      @keyframes pulse { 50% { box-shadow: -14px 0 56px rgba(0,229,255,.6), 14px 0 56px rgba(255,77,77,.6), 0 0 80px rgba(255,43,214,.35); } }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="assets/avatar.jpg" alt="cldNexus Logo: Neon-Skull in Cyan, Magenta und Rot">
+    <h1>cldNexus</h1>
+    <p class="tag">Cyberpunk-<b>Tools</b>, <b>Games</b> &amp; <b>Bots</b></p>
+
+    <section class="card">
+      <p>Wir sind Nico und Nick und bauen Dinge, die gut aussehen und funktionieren.</p>
+      <ul>
+        <li>Tools für Terminal und Alltag im CyberSkull-Look</li>
+        <li>Games und Spielideen</li>
+        <li>Bots und Automatisierung</li>
+        <li>Claude-Code-Skills, die wir untereinander teilen</li>
+      </ul>
+    </section>
+
+    <nav class="links" aria-label="Links">
+      <a class="btn" href="https://github.com/cldNexus">GitHub-Org</a>
+      <a class="btn m" href="https://github.com/cldNico">Nico</a>
+      <a class="btn r" href="https://github.com/cldNiick">Nick</a>
+    </nav>
+
+    <footer>&copy; cldNexus</footer>
+  </main>
+</body>
+</html>
