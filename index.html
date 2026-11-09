@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/avatar.jpg">
   <style>
     @font-face { font-family: "Share Tech Mono"; src: url("fonts/ShareTechMono-Regular.ttf") format("truetype"); font-display: swap; }
-    :root { --cyan: #00e5ff; --magenta: #ff2bd6; --red: #ff4d4d; --bg: #05020a; --fg: #bff8ff; }
+    :root { --cyan: #00e5ff; --magenta: #ff2bd6; --red: #ff4d4d; --bg: #05020a; --bg-2: #0b0612; --fg-dim: #6f8a93; --fg: #bff8ff; }
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--fg);
       font-family: "Share Tech Mono", Consolas, "Courier New", monospace; }
@@ -20,7 +20,7 @@
         radial-gradient(ellipse at 50% 50%, rgba(255,43,214,.07), transparent 60%),
         var(--bg); }
     main { width: 100%; max-width: 720px; text-align: center; }
-    .logo { width: min(260px, 60vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover;
+    .logo { width: min(150px, 40vw); aspect-ratio: 1; border-radius: 50%; object-fit: cover;
       border: 2px solid var(--cyan);
       box-shadow: -10px 0 40px rgba(0,229,255,.45), 10px 0 40px rgba(255,77,77,.45), 0 0 60px rgba(255,43,214,.25); }
     h1 { margin: 28px 0 6px; font-size: clamp(2.4rem, 9vw, 4rem); letter-spacing: .08em; font-weight: normal;
@@ -39,6 +39,20 @@
     a.btn.m { background: var(--magenta); }
     a.btn.r { background: var(--red); }
     a.btn:hover { transform: translateY(-2px); box-shadow: 0 0 18px currentColor; }
+    .term { margin: 0 0 24px; border: 1px solid rgba(255,43,214,.4); border-radius: 12px; overflow: hidden; text-align: left;
+      background: rgba(5,2,10,.85); box-shadow: 0 0 40px rgba(0,229,255,.12), 0 0 40px rgba(255,77,77,.12); }
+    .term-bar { display: flex; gap: 7px; align-items: center; padding: 9px 14px; background: var(--bg-2);
+      border-bottom: 1px solid rgba(0,229,255,.25); color: var(--fg-dim); font-size: .85rem; }
+    .term-bar i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .term-bar i:nth-child(1) { background: var(--cyan); } .term-bar i:nth-child(2) { background: var(--magenta); } .term-bar i:nth-child(3) { background: var(--red); }
+    .term-bar span { margin-left: 8px; }
+    .term-body { display: flex; gap: 24px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 18px; }
+    #skull { width: min(100%, 330px); height: auto; aspect-ratio: 588 / 572; }
+    .info { font-size: .95rem; line-height: 1.55; min-width: 220px; }
+    .info .u { color: var(--cyan); } .info .at { color: var(--magenta); } .info .k { color: var(--magenta); } .info .v { color: var(--fg); }
+    .info .rule { color: var(--cyan); }
+    .swatch { display: flex; gap: 0; margin-top: 12px; }
+    .swatch b { width: 34px; height: 16px; display: inline-block; }
     footer { margin-top: 36px; color: #6f8a93; font-size: .85rem; }
     @media (prefers-reduced-motion: no-preference) {
       .logo { animation: pulse 4s ease-in-out infinite; }
@@ -51,6 +65,24 @@
     <img class="logo" src="assets/avatar.jpg" alt="cldNexus Logo: Neon-Skull in Cyan, Magenta und Rot">
     <h1>cldNexus</h1>
     <p class="tag">Cyberpunk-<b>Tools</b>, <b>Games</b> &amp; <b>Bots</b></p>
+
+
+    <section class="term" aria-label="cyberfetch">
+      <div class="term-bar"><i></i><i></i><i></i><span>cftch</span></div>
+      <div class="term-body">
+        <canvas id="skull" role="img" aria-label="Rotierender 3D-Skull aus Zeichen, von Cyan über Magenta nach Rot"></canvas>
+        <div class="info">
+          <div><span class="u">cldNexus</span><span class="at">@</span><span class="u">nexus</span></div>
+          <div class="rule">----------------</div>
+          <div><span class="k">Org</span>: <span class="v">cldNexus</span></div>
+          <div><span class="k">Crew</span>: <span class="v">Nico + Nick</span></div>
+          <div><span class="k">Look</span>: <span class="v">CyberSkull</span></div>
+          <div><span class="k">Shell</span>: <span class="v">PowerShell / cmd</span></div>
+          <div><span class="k">Stack</span>: <span class="v">Claude Code, Python</span></div>
+          <div class="swatch" aria-hidden="true"><b style="background:#00e5ff"></b><b style="background:#ff2bd6"></b><b style="background:#ff4d4d"></b></div>
+        </div>
+      </div>
+    </section>
 
     <section class="card">
       <p>Wir sind Nico und Nick und bauen Dinge, die gut aussehen und funktionieren.</p>
@@ -70,5 +102,7 @@
 
     <footer>&copy; cldNexus</footer>
   </main>
+  <script src="assets/skull-data.js"></script>
+  <script src="assets/skull.js"></script>
 </body>
 </html>
